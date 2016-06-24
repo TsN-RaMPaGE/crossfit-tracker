@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="Javascript/layout.js"></script>
+    <script src="Javascript/Routing/routeManager.js"></script>
+    <script src="Javascript/controllers/HomeCtrl.js"></script>
+
+    <!-- CrossFit Tracker Controllers -->
+    <script src="Javascript/Controllers/CFTracker/HomeCtrl.js"></script>
+    <script src="Javascript/Controllers/CFTracker/CalendarCtrl.js"></script>
+    <script src="Javascript/Controllers/CFTracker/SearchCtrl.js"></script>
+
+    <!-- Library Controllers -->
+    <script src="Javascript/Controllers/LibraryCtrl.js"></script>
+
+    <!-- Projects Controllers -->
+    <script src="Javascript/Controllers/ProjectsCtrl.js"></script>
+
+    <!-- Tutorials Controllers -->
+    <script src="Javascript/Controllers/TutorialsCtrl.js"></script>
+
+  </head>
+  <body ng-app="myApp" ng-controller="HomeController">
+    <div id="pageContainer" class="container-fluid">
+      <div id="headerContainer" class="row">
+        <a id="headerText" href="home">Brian Redd</a>
+      </div>
+      <div id="navContentsContainer" class="row">
+        <div id="siteNavigationContainer" class="col-md-2">
+          <div id="CFTrackerNavButton" class="navButton">
+            <a href="CFTracker/home">
+              <span class="divLink"></span>
+            </a>
+            <div class="siteNavigationTextContainer">
+              <div class="siteNavigationText">CF Tracker</div>
+            </div>
+            <div>
+              <img id="kettlebellImage" src="/images/CrossFitTracker/kettlebell.png">
+            </div>
+          </div>
+          <div id="libraryNavButton" class="navButton">
+            <a href="library">
+              <span class="divLink"></span>
+            </a>
+            <div class="siteNavigationTextContainer">
+              <div class="siteNavigationText">Library</div>
+            </div>
+            <div>
+              <i class="customGlyphicon glyphicon glyphicon-book"></i>
+            </div>
+          </div>
+          <div id="projectsNavButton" class="navButton">
+            <a href="projects">
+              <span class="divLink"></span>
+            </a>
+            <div class="siteNavigationTextContainer">
+              <div class="siteNavigationText">Projects</div>
+            </div>
+            <div>
+              <i class="customGlyphicon glyphicon glyphicon-tower"></i>
+            </div>
+          </div>
+          <div id="tutorialsNavButton" class="navButton">
+            <a href="tutorials">
+              <span class="divLink"></span>
+            </a>
+            <div class="siteNavigationTextContainer">
+              <div class="siteNavigationText">Tutorials</div>
+            </div>
+            <div>
+              <i class="customGlyphicon glyphicon glyphicon-star"></i>
+            </div>
+          </div>
+        </div>
+        <div id="contentWrapper">
+          <div id="contentCanvas">
+            <div id="pageContent" class="col-md-9">
+              <div ng-view></div>
+            </div>
+            <div id="rightContainer" class="col-md-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

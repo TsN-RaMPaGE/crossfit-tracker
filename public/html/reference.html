@@ -1,0 +1,75 @@
+/* REFERENCE USE ONLY*/
+
+<!-- public/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>Starter Node and Angular</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+
+	<!-- JS -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+
+	<!-- ANGULAR CUSTOM -->
+	<script src="Javascript/controllers/MainCtrl.js"></script>
+	<script src="Javascript/controllers/NerdCtrl.js"></script>
+	<script src="Javascript/controllers/GeekCtrl.js"></script>
+	<script>
+		angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+
+		$routeProvider
+
+			// home page
+			.when('/', {
+				templateUrl: 'html/home.html',
+				controller: 'MainController'
+			})
+
+			// nerds page that will use the NerdController
+			.when('/nerds', {
+				templateUrl: 'html/nerd.html',
+				controller: 'NerdController'
+			})
+
+			//
+			.when('/geeks', {
+				templateUrl: 'html/geek.html',
+				controller: 'GeekController'
+			});
+
+		$locationProvider.html5Mode(true);
+
+	}]);
+
+	angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl']);
+
+	</script>
+</head>
+<body ng-app="sampleApp" ng-controller="NerdController">
+<div class="container">
+
+	<!-- HEADER -->
+	<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/">Stencil: Node and Angular</a>
+		</div>
+
+		<!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
+		<ul class="nav navbar-nav">
+			<li><a href="/nerds">Nerds</a></li>
+			<li><a href="/geeks">Geeks</a></li>
+		</ul>
+	</nav>
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	<div ng-view></div>
+
+</div>
+</body>
+</html>
