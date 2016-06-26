@@ -21,9 +21,9 @@ Pull Repository from Github
 1. Create directory in desired location
 2. Open terminal(Mac)/ Git Shell(PC) and navigate to created directory
 3. Run 'git init'
-4. Set remote repository by running 'git remote add origin https://github.com/bpred754/brianredd.git'
-5. If you get the error "fatal: remote origin already exists" then run "git remote set-url origin https://github.com/bpred754/brianredd.git"
-5. Pull files from repository with 'git pull https://github.com/bpred754/brianredd.git'
+4. Set remote repository by running 'git remote add origin https://github.com/TsN-RaMPaGE/crossfit-tracker.git'
+5. If you get the error "fatal: remote origin already exists" then run "git remote set-url origin https://github.com/TsN-RaMPaGE/crossfit-tracker.git"
+5. Pull files from repository with 'git pull https://github.com/TsN-RaMPaGE/crossfit-tracker.git'
 6. *Sources: http://www.newthinktank.com/2014/04/git-video-tutorial/ and http://www.newthinktank.com/2014/04/git-video-tutorial-2/
 
 Configure Application
